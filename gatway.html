@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('cta-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background: rgba(0, 0, 0, 0.7);
+            width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+        }
+        .payment-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .payment-container label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+        .payment-container input {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ffb000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #e6a000;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        .cart-summary {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .cart-summary h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #ffb000;
+        }
+        .cart-summary p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container">
+        <h2>Payment Gateway</h2>
+
+        <!-- Display Cart Summary -->
+        <div class="cart-summary" id="cart-summary">
+            <h3>Order Summary</h3>
+            <!-- Cart items will be appended here -->
+        </div>
+
+        <form id="payment-form">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" placeholder="Enter name on card" required>
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" placeholder="123" required>
+
+            <label for="billing-address">Billing Address</label>
+            <input type="text" id="billing-address" placeholder="Enter billing address" required>
+
+            <button type="submit" class="submit-btn">Pay Now</button>
+        </form>
+
+        <a href="cart.html" class="back-btn">Back to Cart</a>
+    </div>
+
+    <script>
+        // Retrieve cart data from localStorage and display it
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function displayCartSummary() {
+            const cartSummaryDiv = document.getElementById('cart-summary');
+            let total = 0;
+
+            cart.forEach((item) => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.name} - $${item.price}`;
+                cartSummaryDiv.appendChild(itemElement);
+                total += item.price;
+            });
+
+            const totalElement = document.createElement('p');
+            totalElement.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+            cartSummaryDiv.appendChild(totalElement);
+        }
+
+        // Display the cart summary on page load
+        displayCartSummary();
+
+        // Handle payment form submission
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Simulate a successful payment process
+            setTimeout(() => {
+                alert('Payment Successful! Redirecting to confirmation...');
+                window.location.href = 'paymentsuccess.html'; // Redirect to payment success page
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form with Password Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('cta-bg.jpg') no-repeat center center fixed; /* Update to your background image */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ffb000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #e6a000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sign Up Form -->
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return handleSignup(event)">
+            <div class="form-group">
+                <input type="text" id="fullname" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to generate a random password
+        function generatePassword() {
+            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+            var password = "";
+            for (var i = 0; i < 10; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return password;
+        }
+
+        // Handle the signup form submission
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            // Generate a password
+            var generatedPassword = generatePassword();
+            
+            // Store the signup info in localStorage (mock sign-up logic)
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var username = document.getElementById('username').value;
+            localStorage.setItem('user', JSON.stringify({
+                fullname: fullname,
+                email: email,
+                username: username,
+                password: generatedPassword
+            }));
+
+            // Show the generated password
+            alert('Sign Up Successful! Your generated password is: ' + generatedPassword);
+
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

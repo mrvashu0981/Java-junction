@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Delivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('cta-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .order-container {
+            background: rgba(0, 0, 0, 0.7);
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+        }
+        .order-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .order-container label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+        .order-container input, .order-container select {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ffb000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #e6a000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <h2>Order Coffee for Delivery</h2>
+
+        <form id="order-form">
+            <!-- Name -->
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+
+            <!-- Location -->
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Enter your location" required>
+
+            <!-- Select Coffee -->
+            <label for="coffee-select">Select Coffee</label>
+            <select id="coffee-select" required>
+                <option value="" disabled selected>Select your coffee</option>
+                <option value="Espresso" data-price="3.00">Espresso - $3.00</option>
+                <option value="Latte" data-price="4.00">Latte - $4.00</option>
+                <option value="Cappuccino" data-price="4.50">Cappuccino - $4.50</option>
+                <option value="Americano" data-price="3.50">Americano - $3.50</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Proceed to Payment</button>
+        </form>
+
+    </div>
+
+    <script>
+        const coffeeSelect = document.getElementById('coffee-select');
+
+        let selectedCoffee = '';
+        let selectedPrice = 0;
+
+        // Update coffee details based on selection
+        coffeeSelect.addEventListener('change', function() {
+            selectedCoffee = this.options[this.selectedIndex].text;
+            selectedPrice = parseFloat(this.options[this.selectedIndex].dataset.price);
+        });
+
+        // Handle form submission
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const location = document.getElementById('location').value;
+
+            // Save user details and selected coffee in localStorage
+            localStorage.setItem('name', name);
+            localStorage.setItem('mobile', mobile);
+            localStorage.setItem('location', location);
+            localStorage.setItem('selectedCoffee', selectedCoffee);
+            localStorage.setItem('selectedPrice', selectedPrice.toFixed(2));
+
+            // Redirect to payment page
+            window.location.href = 'gatway.html';
+        });
+    </script>
+
+</body>
+</html>

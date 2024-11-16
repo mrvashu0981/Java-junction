@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title> COFFEE JUNCTION</title>
+  <meta name="title" content="Java - Great coffee good vibes">
+  <meta name="description" content="This is a coffee shop html template made by codewithsadee">
+ 
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+ 
+  <link rel="stylesheet" href="style.css">
+
+   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merienda&family=Oswald:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  
+  <link rel="preload" as="image" href="hero section.jpg">
+<style>
+  .margin{
+    margin-top:-80px;
+    /* position: absolute; */
+  }
+
+  h2{
+    color: white;
+    font-size: 30px;
+  }
+  .form-container {
+    height: 400px;
+            
+            width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            margin: 100px auto;
+            color: white;
+            
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        .form-group input {
+            width: 48%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+        .form-group.full-width {
+            justify-content: flex-start;
+        }
+        .form-group.full-width input, 
+        .form-group.full-width textarea {
+            width: 100%;
+        }
+        textarea {
+            resize: none;
+            height: 80px;
+            background:none;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #c58e17;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color:#e6a000;
+        }
+        .right{
+          margin-top: -530px;
+          margin-left: 600px;
+          position: absolute;
+        }
+        
+/* For Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+
+ 
+.right {
+    margin: 0;
+    position: static;
+}
+
+.form-container {
+    width: 90%;  
+    margin-top: 50px;
+}
+
+/* Reduce margins on smaller screens */
+.margin {
+    margin-top: 20px;
+}
+
+/* Adjust form field layout */
+.form-group {
+    display: block; /* Stack form fields vertically */
+}
+
+.form-group input {
+    width: 100%; /* Full-width inputs */
+    margin-bottom: 15px; /* Add space between inputs */
+}
+
+.submit-btn {
+    width: 100%; /* Full-width button */
+}
+
+/* Ensure text elements scale well */
+h2 {
+    font-size: 25px;
+}
+
+.contact-info {
+    text-align: center; /* Center-align contact info on smaller screens */
+}
+
+.contact-info div {
+    margin-bottom: 10px; /* Reduce margin between contact info sections */
+}
+}
+
+/* For Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+
+/* Make form container full-width on small devices */
+.form-container {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Reduce font sizes for smaller screens */
+h2 {
+    font-size: 20px;
+}
+
+.form-group {
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full-width inputs and textarea */
+}
+
+textarea {
+    height: 70px;
+}
+
+.submit-btn {
+    padding: 12px;
+}
+
+/* Center text and reduce margins for better mobile display */
+.contact-info {
+    text-align: center;
+}
+
+.margin {
+    margin-top: 10px;
+}
+
+.contact-info div {
+    margin-bottom: 10px;
+}
+}
+
+/* For Larger Screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+
+.form-container {
+    width: 70%; /* Adjust form container size for larger screens */
+}
+
+.form-group input {
+    width: 100%; /* Full-width inputs */
+}
+
+/* Adjust margins to maintain spacing */
+.margin {
+    margin-top: 20px;
+}
+
+.right {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.contact-info {
+    text-align: center; /* Center contact info for larger screens */
+}
+}
+
+</style>
+  
+
+</head>
+
+<body >
+             <li class="menu-dropdown">
+              
+            </li>
+    
+            <li>
+              <a href="#blog" class="navbar-link" data-nav-link></a>
+            </li>
+    
+            <li>
+              <a href="#" class="navbar-link" data-nav-link></a>
+            </li>
+    
+          </ul>
+    
+          
+     
+        </nav>
+    
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="span"></span>
+          <span class="span"></span>
+        </button>
+    
+      </div>
+    </div>
+    
+
+  </header>
+
+ 
+
+
+
+  <main>
+    <article>
+
+       
+
+<div class="margin">
+      <section class="section menu has-bg-image" id="menu" aria-labelledby="menu-label"
+        style="background-image: url('menu-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle text-center" data-reveal>Cofee Shop  --Owner--</p>
+
+          <h2 class="h2 section-title text-center" id="menu-label" data-reveal>
+            Contact me
+          </h2>
+
+          <ul class="grid-list" style="background-image: url('menu-bg-logo.png')">
+
+            <li>
+              <div class="menu-card" data-reveal>
+                <div class="contact-container">
+                  <h2>Contact Us</h2><br>
+                  <div class="contact-info">
+                      <div>
+                          <i class="icon"><img src="phone-removebg-preview.png" height="35px" width="35px">Call Us
+                          <span>+91 7460 92 1492 <br>Email-vishantkumar0981@gmail.com</span>
+                      </div><br>
+                      <div class="location">
+                          <i class="icon"><img src="location-removebg-preview.png" height="35px" width="35px"></i>Location 
+                          <span>UP32 sec Q,Lucknow Aliganj, ram ram bank chauraha</span>
+                      </div><br>
+                      <div class="business-hours">
+                          <i class="icon"><img src="business-removebg-preview.png" height="35px" width="35px" alt=""></i>Business Hours
+                          <span>Mon - Fri ... 10 am - 8 pm</span><br>
+                          <span>Sat, Sun ...... Closed</span>
+                      </div>
+                  </div>
+
+                  <div class="right"><div class="form-container">
+                    <form  action="https://api.web3forms.com/submit" method="POST">
+                        <div class="form-group">
+                          <input type="hidden" name="access_key" value="e279b7d1-7699-4a11-982b-95e79a3274a1">
+                            <input type="email" name="name" placeholder="Email" required>
+                            <input type="name" placeholder="Name" required>
+
+                        </div>
+                        <div class="form-group full-width">
+                            <input type="text" placeholder="Address">
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div></div>
+              </div>
+            </div>
+
+             
+          </ul>
+
+        </div>
+      </section>
+    
+    <script src="script.js"></script>
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+       
+    </body>
+</html>
+
+      
+
+
+
+

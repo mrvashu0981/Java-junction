@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('cta-bg.jpg') no-repeat center center fixed; /* Update to your background image */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            width: 350px;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            padding-top: 20px;
+        }
+        .form-container p {
+            margin-top: 20px;
+            color: white;
+            font-size: 16px;
+            padding-top: 20px;
+        }
+        .purchase-details {
+            text-align: left;
+            margin-top: 30px;
+            color: white;
+        }
+        .purchase-details h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffb000;
+        }
+        .purchase-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .purchase-details ul li {
+            margin-bottom: 10px;
+        }
+        .submit-btn {
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffb000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #e6a000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your purchase. Your order is being processed.</p>
+
+        <div class="purchase-details">
+            <h3>Purchase Details:</h3>
+            <ul>
+                <li><strong>Item:</strong> <span id="item-name">Loading...</span></li>
+                <li><strong>Amount:</strong> <span id="amount">Loading...</span></li>
+                <li><strong>Date:</strong> <span id="date">Loading...</span></li>
+            </ul>
+
+            <h3>Payment Method:</h3>
+            <ul>
+                <li><strong>Cardholder Name:</strong> <span id="cardholder-name">Loading...</span></li>
+                <li><strong>Card Number:</strong> <span id="card-number">Loading...</span></li>
+                <li><strong>Expiry Date:</strong> <span id="expiry-date">Loading...</span></li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="submit-btn">Return to Home</a>
+    </div>
+
+    <script>
+        // Simulating a fetch from backend
+        function fetchPaymentDetails() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({
+                        itemName: "Premium Membership",
+                        amount: "$49.99",
+                        date: "September 17, 2024",
+                        cardholderName: "John Doe",
+                        cardNumber: "**** **** **** 1234",
+                        expiryDate: "12/24"
+                    });
+                }, 1000); // Simulating delay
+            });
+        }
+
+        // Populating the payment details
+        fetchPaymentDetails().then(data => {
+            document.getElementById('item-name').innerText = data.itemName;
+            document.getElementById('amount').innerText = data.amount;
+            document.getElementById('date').innerText = data.date;
+            document.getElementById('cardholder-name').innerText = data.cardholderName;
+            document.getElementById('card-number').innerText = data.cardNumber;
+            document.getElementById('expiry-date').innerText = data.expiryDate;
+        });
+    </script>
+
+</body>
+</html>

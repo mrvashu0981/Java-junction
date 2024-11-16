@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title> JAVA JUNCTION</title>
+  <meta name="title" content="Java - Great coffee good vibes">
+  <meta name="description" content="This is a coffee shop html template made by codewithsadee">
+ 
+  <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+  <link rel="stylesheet" href="style.css">
+
+   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merienda&family=Oswald:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  
+  <link rel="preload" as="image" href="hero section.jpg">
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+
+    <div class="header-top">
+      <div class="container">
+
+        <p class="header-top-text">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          <span class="span">Opening Hours :</span> 08:00 Am - 09:00 Pm
+        </p>
+
+       <p class="header-top-text">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          <span class="span">Location :</span> Sector Q, Ram ram bank cahuraha, Aliganj Lucknow Utter pradesh
+        </p>
+
+      </div>
+    </div>
+
+    
+    <div class="header-bottom" data-header>
+      <div class="container">
+    
+        <a href="#" class="logo">
+          <img src="Capture-removebg-preview.png" width="216" height="100" alt="keofi home" class="w-100">
+        </a>
+    
+        <nav class="navbar" data-navbar>
+    
+          <ul class="navbar-list">
+    
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+            </li>
+    
+            <li>
+              <a href="#about" class="navbar-link" data-nav-link>About</a>
+            </li>
+    
+            <!-- Menu with Dropdown Animation -->
+            <li class="menu-dropdown">
+              <a href="menu.html" class="navbar-link" data-nav-link>Menu</a>
+              <div class="dropdown">
+                <div class="item"><a href="menu1.html">Menu 1</a></div>
+                <div class="item"><a href="menu2.html">Menu 2</a></div>
+                <div class="item">Menu 3</div>
+              </div>
+            </li>
+    
+            <li>
+              <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+    
+            <li>
+              <a href="contact.html" class="navbar-link" data-nav-link>Contacts</a>
+            </li>
+            <li>
+                <a href="cart.html" class="navbar-link" data-nav-link><i class="fa-solid fa-cart-shopping"></i></a>
+                
+              </li>
+    
+          </ul>
+    
+          <a href="#" class="btn btn-primary"> </a>
+    
+        </nav>
+    
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="span"></span>
+          <span class="span"></span>
+        </button>
+    
+      </div>
+    </div>
+    
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-labelledby="hero-label"
+        style="background-image: url('food bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle has-before reveal-left" data-reveal>Welcome to MY JAVA JUNCTION</p>
+
+          <h1 class="h1 hero-title reveal-left" id="hero-label" data-reveal>Choose Your Menu </h1>
+
+          <div class="btn-group reveal-left" data-reveal>
+            <a href="restaurent.html" class="btn btn-primary">
+              <span class="span">Explore more</span>
+
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+            </a>
+
+            <a href="cart.html" class="btn btn-secondary">
+              <span class="span">Get delivery</span>
+
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <section class="section menu has-bg-image" id="menu" aria-labelledby="menu-label"
+        style="background-image: url('menu-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle text-center" data-reveal>Choose You best</p>
+
+          <h2 class="h2 section-title text-center" id="menu-label" data-reveal>
+             Popular Food Service Menu
+          </h2>
+
+          <ul class="grid-list" style="background-image: url('menu-bg-logo.png')">
+
+            <li>
+              <div class="menu-card" data-reveal>
+
+                <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                  <img src="garilic.jpeg" width="200" height="200" loading="lazy" alt="Americano Coffee"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Garlic Bread <button class="btn1" onclick="addToCart('Garlic Bread', 4.9)">Add to Cart</button></h3>
+
+                  <p class="card-text">
+                    Vampires, beware! This is the most garlicky garlic bread  
+
+                  </p>
+
+                  <data class="card-price has-before" value="4.9">$4.9</data>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card" data-reveal>
+
+                <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                  <img src="grilled.jpg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Grilled Chicken Wrap <button class="btn1" onclick="addToCart('Grilled Chiken Wrap', 8.9)">Add to Cart</button></h3>
+
+                  <p class="card-text"> Crispy, cheesy, and oh so savory
+                  </p>
+
+                  <data class="card-price has-before" value="4.9">$8.9</data>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="tukkey.webp" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Turkey Club Sandwich <button class="btn1" onclick="addToCart('Turkey Club Sandwich', 10.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        Cranberry sauce mustard, leftover Thanksgiving turkey, bacon, and th
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$10.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="caesar.jpg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Caesar Salad<button class="btn1" onclick="addToCart('Caesar Salad', 5.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                    </p>Spicy shrimp Caesar salad recipe is a gluten free twist on a classic di
+  
+                    <data class="card-price has-before" value="4.9">$5.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="Grilled-Chicken-Fettucine-Alfredo-lg.webp" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Grilled Chicken<button class="btn1" onclick="addToCart('Grilled Chicken', 6.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        Grilled Chicken Alfredo Pasta - Snappy Gourmet
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$6.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="cheejburger.avif" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Cheeseburger Fries <button class="btn1" onclick="addToCart('Cheeseburger', 7.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                      2/3 irish, 1/3 streamed milk
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$7.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="pizzaa.jpeg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Margherita Pizza <button class="btn1" onclick="addToCart('Margherita Pizza', 7.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        Created in Naples for the queen, the classic Pizza Margherita 
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$7.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="bq.jpg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">BBQ Ribs<button class="btn1" onclick="addToCart('BBQ Ribo', 5.9)">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        American Style Pork Ribs with Barbecue Sauce
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$5.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="WellandFull-1-23.jpg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Vegan Buddha Bowl<button class="btn1">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        This vegan buddha bowl has it all - fluffy quinoa, 
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$4.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <li>
+                <div class="menu-card" data-reveal>
+  
+                  <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                    <img src="800-LavaCakes-aaDSC_9507.jpg" width="200" height="200" loading="lazy" alt="Espresso Coffee"
+                      class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3 card-title">Chocolate Cake<button class="btn1">Add to Cart</button></h3>
+  
+                    <p class="card-text">
+                        These mini chocolate molten lava cakes have a rich chocolate cake with
+                    </p>
+  
+                    <data class="card-price has-before" value="4.9">$5.9</data>
+  
+                  </div>
+  
+                </div>
+              </li>
+   
+
+            <li>
+              <div class="menu-card" data-reveal>
+
+                <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                  <img src="FP-10-Minute-Eggless-Tiramisu-For-Two-2.jpg" width="200" height="200" loading="lazy" alt="Cold - Coffee"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Tiramisu<button class="btn1">Add to Cart</button></h3>
+
+                  <p class="card-text">
+                    2/3 espresso, 1/3 streamed milk
+                  </p>
+
+                  <data class="card-price has-before" value="6.0">$6.0</data>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card" data-reveal>
+
+                <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
+                  <img src="1610443826.png" width="200" height="200" loading="lazy" alt="Cappuccino Arabica"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Soft Drinks  <button class="btn1">Add to Cart</button></h3>
+
+                  <p class="card-text">
+                    2/3 espresso, 1/3 streamed milk
+                  </p>
+
+                  <data class="card-price has-before" value="2.8">$3.8</data>
+
+                </div>
+
+              </div>
+            </li>
+ 
+
+          </ul>
+
+        </div>
+      </section>
+    
+    <script src="script.js"></script>
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+       
+    </body>
+</html>
+
+      
+
+
+
+

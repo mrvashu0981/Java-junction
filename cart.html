@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .cart-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+        }
+
+        .cart-actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color:hsl(41, 54%, 48%);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: black;
+            transition: 0.8s;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be appended here -->
+        </div>
+
+        <div class="cart-actions">
+            <button class="btn" id="buy-now-btn">Buy Now</button>
+        </div>
+    </section>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function displayCartItems() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+
+                cartItemDiv.innerHTML = `
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price}</p>
+                    </div>
+                    <button class="btn remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                `;
+
+                cartItemsDiv.appendChild(cartItemDiv);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems();
+        }
+
+        // Redirect to the payment gateway page when "Buy Now" is clicked
+        document.getElementById('buy-now-btn').addEventListener('click', function() {
+            if (cart.length > 0) {
+                window.location.href = 'gatway.html'; // Redirect to the payment page
+            } else {
+                alert('Your cart is empty!');
+            }
+        });
+
+        // Display cart items on page load
+        displayCartItems();
+    </script>
+</body>
+</html>
